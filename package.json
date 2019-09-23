@@ -17,9 +17,6 @@
   },
   "homepage": "https://github.com/grizfan/johnegan.dev#readme",
   "dependencies": {
-    "npm": "^6.11.3"
-  }
-  "dependencies": {
     "autoprefixer": "^9.1.0",
     "bootstrap": "^4.3.1",
     "postcss-cli": "^6.1.3"

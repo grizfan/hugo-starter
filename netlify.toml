@@ -1,0 +1,9 @@
+[build]
+publish = "public"
+command = "npm install && hugo"
+
+[context.production.environment]
+HUGO_VERSION = "0.58.3"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
