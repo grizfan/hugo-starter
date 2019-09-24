@@ -1,1 +1,6 @@
-// import SCSS files and overrides. This will become the main CSS file
+// add SCSS files below
+@import "custom_variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "styles.scss"
+
+

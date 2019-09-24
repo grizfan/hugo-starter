@@ -1,21 +1,27 @@
 {{ define "main" }}
-<main aria-role="main">
-  <header class="homepage-header">
+<section>
+  <div class="container">
     <h1>{{.Title}}</h1>
     {{ with .Params.subtitle }}
     <span class="subtitle">{{.}}</span>
     {{ end }}
-  </header>
-  <div class="homepage-content">
+  </div>
+</section>
+<section>
+  <div class="container">
     <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
     <h3>demo</h3>
     {{.Content}}
   </div>
-  <div>
+</section>
+<section>
+  <div class="container">
     <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
     {{ range first 10 .Pages }}
         {{ .Render "summary"}}
     {{ end }}
   </div>
-</main>
+</section>
+<!-- schema.org -->
+{{ partial "schema-webSite.html" . }}
 {{ end }}

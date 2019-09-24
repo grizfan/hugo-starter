@@ -1,3 +1,24 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+
+relativeURLs = "true"
+canonifyurls = "true"
+enableRobotsTXT = "true"
+# Site params
+[params]
+author = "John Egan"
+home= "Home"
+logo = "images/logo.png"
+gmapAPI = "#"
+shortname = "xxxxx"
+fullname = "xxxxxxxxxx"
+tagline ="xxxxxxxxxx"
+description = "xxxxxxxxxx"
+disallow_search_engines = false # set robots.txt to disallow everything
+# Meta data
+# Google Analitycs
+googleAnalitycsID = "GA-ID"
+googleTagManagerID = "GTM-P8B7SX"
+
+copyrighthtml = "xxxxxxxxxx"

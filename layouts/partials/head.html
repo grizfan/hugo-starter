@@ -1,1 +1,35 @@
-<!-- head tags -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{" | "}}{{ .Site.Params.Description }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else if eq .Section "author" }}{{if .Params.name}}{{.Params.name}} | {{ i18n "authorOfPostsOnBlog" }} „{{.Site.Title}}" {{else}}{{ i18n "authorsOfPostsOnBlog" }} „{{.Site.Title}}"{{end}}{{else if eq .Section "blog" }}{{ i18n "blogs" }} | {{ .Site.Title}}{{else}}{{ .Title }}{{with .Params.Description}}{{" | " .}}{{ end }}{{ end }}</title>
+{{/*  Style sheets  */}}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700" rel="stylesheet">
+  {{ $options := (dict "targetPath" "css/style.css"  "enableSourceMap" true "includePaths" (slice "themes/bmls/node_modules")) }}
+  {{ $style := resources.Get "sass/main.scss" | toCSS $options }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{/*  RSS  */}}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+{{/*  Social Media  */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
+  {{/*  SEO stuff  */}}
+  <meta name="description" content="{{ .Site.Params.Description }}">
+  <meta name="robots" content="index,follow"><!-- All Search Engines -->
+  <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+  <link rel="canonical" href="{{ .Permalink }}">
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8B7SX');</script>
+    <!-- End Google Tag Manager -->
+    {{ partial "favicon.html" . }}
+</head>
+
