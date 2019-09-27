@@ -59,4 +59,13 @@ most of your work will be in the following directories:
 ├── package-lock.json
 ├── package.json
 ```
+## getting started
+1. Git clone or download this repo into a new directory
+2. For local development, you will first need to run `npm install` to install Bootstrap and a few other items specified in the package.json file. 
+3. Once that completes, run `hugo server` to start up the local hugo environment and launch the preview server.
+4. In your GitHub account, create a new repository, but do /not/ add a readme or license file.
+5. Follow [these instructions](https://help.github.com/en/articles/changing-a-remotes-url) to change the remote URL for you local development directory to your newly created GitHub repository. 
+6. In your Netlify account, [create a new site from Git](https://www.netlify.com/docs/) by following the instructions in your account control panel.
+That covers the basics. 
+
 
