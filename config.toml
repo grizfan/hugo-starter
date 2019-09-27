@@ -1,6 +1,6 @@
 baseURL = "https://www.johnegan.dev"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Website name"
 
 relativeURLs = "true"
 canonifyurls = "true"
@@ -11,14 +11,14 @@ author = "John Egan"
 home= "Home"
 logo = "images/logo.png"
 gmapAPI = "#"
-shortname = "xxxxx"
-fullname = "xxxxxxxxxx"
-tagline ="xxxxxxxxxx"
-description = "xxxxxxxxxx"
+shortname = "short name"
+fullname = "Full name"
+tagline ="website or business tagline"
+description = "longer description of website used for meta description and social sharing purposes."
 disallow_search_engines = false # set robots.txt to disallow everything
 # Meta data
 # Google Analitycs
 googleAnalitycsID = "GA-ID"
-googleTagManagerID = "GTM-P8B7SX"
+googleTagManagerID = "GTM-ID"
 
-copyrighthtml = "xxxxxxxxxx"
+copyrighthtml = "This work is licensed under a Creative Commons Attribution 4.0 International License."
